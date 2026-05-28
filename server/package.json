@@ -1,0 +1,39 @@
+{
+  "name": "prizma-server",
+  "version": "1.0.0",
+  "description": "Prizma Zoo Shop API Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "migrate:sqlite": "node scripts/migrate-sqlite-to-postgres.js",
+    "smoke": "node scripts/smoke-reports.js"
+  },
+  "keywords": [
+    "zoo",
+    "shop",
+    "api"
+  ],
+  "author": "D.V. Zlobin",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/pdfkit": "^0.17.5",
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^12.9.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "exceljs": "^4.4.0",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "pdfkit": "^0.18.0",
+    "pg": "^8.20.0",
+    "sequelize": "^6.37.8",
+    "sqlite3": "^6.0.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

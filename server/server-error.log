@@ -1,0 +1,91 @@
+Error getting top products: Error
+    at Query.run (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async PostgresQueryInterface.select (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async OrderItem.findAll (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\sequelize\lib\model.js:1140:21)
+    at async C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\routes\reports.js:241:30 {
+  name: 'SequelizeDatabaseError',
+  parent: error: неоднозначная ссылка на столбец "product_id"
+      at parseErrorMessage (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\pg-protocol\dist\parser.js:305:11)
+      at Parser.handlePacket (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\pg-protocol\dist\parser.js:143:27)
+      at Parser.parse (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\pg-protocol\dist\parser.js:37:38)
+      at Socket.<anonymous> (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\pg-protocol\dist\index.js:11:42)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+    length: 153,
+    severity: 'ОШИБКА',
+    code: '42702',
+    detail: undefined,
+    hint: undefined,
+    position: '286',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '835',
+    routine: 'scanRTEForColumn',
+    sql: 'SELECT "OrderItem"."product_id", SUM("quantity") AS "total_sold", "Product"."product_id" AS "Product.product_id", "Product"."name" AS "Product.name" FROM "order_items" AS "OrderItem" LEFT OUTER JOIN "products" AS "Product" ON "OrderItem"."product_id" = "Product"."product_id" GROUP BY "product_id", "Product"."name" ORDER BY SUM("quantity") DESC LIMIT 5;',
+    parameters: undefined
+  },
+  original: error: неоднозначная ссылка на столбец "product_id"
+      at parseErrorMessage (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\pg-protocol\dist\parser.js:305:11)
+      at Parser.handlePacket (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\pg-protocol\dist\parser.js:143:27)
+      at Parser.parse (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\pg-protocol\dist\parser.js:37:38)
+      at Socket.<anonymous> (C:\Users\Redmibook\Desktop\Zadanie_tz\proect web\server\node_modules\pg-protocol\dist\index.js:11:42)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+    length: 153,
+    severity: 'ОШИБКА',
+    code: '42702',
+    detail: undefined,
+    hint: undefined,
+    position: '286',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '835',
+    routine: 'scanRTEForColumn',
+    sql: 'SELECT "OrderItem"."product_id", SUM("quantity") AS "total_sold", "Product"."product_id" AS "Product.product_id", "Product"."name" AS "Product.name" FROM "order_items" AS "OrderItem" LEFT OUTER JOIN "products" AS "Product" ON "OrderItem"."product_id" = "Product"."product_id" GROUP BY "product_id", "Product"."name" ORDER BY SUM("quantity") DESC LIMIT 5;',
+    parameters: undefined
+  },
+  sql: 'SELECT "OrderItem"."product_id", SUM("quantity") AS "total_sold", "Product"."product_id" AS "Product.product_id", "Product"."name" AS "Product.name" FROM "order_items" AS "OrderItem" LEFT OUTER JOIN "products" AS "Product" ON "OrderItem"."product_id" = "Product"."product_id" GROUP BY "product_id", "Product"."name" ORDER BY SUM("quantity") DESC LIMIT 5;',
+  parameters: {}
+}
+node:events:486
+      throw er; // Unhandled 'error' event
+      ^
+
+Error [ERR_STREAM_WRITE_AFTER_END]: write after end
+    at write_ (node:_http_outgoing:900:11)
+    at ServerResponse.write (node:_http_outgoing:849:15)
+    at PDFDocument.ondata (node:internal/streams/readable:1008:24)
+    at PDFDocument.emit (node:events:508:28)
+    at Readable.read (node:internal/streams/readable:780:10)
+    at flow (node:internal/streams/readable:1286:53)
+    at resume_ (node:internal/streams/readable:1265:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+Emitted 'error' event on ServerResponse instance at:
+    at emitErrorNt (node:_http_outgoing:872:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'ERR_STREAM_WRITE_AFTER_END'
+}
+
+Node.js v24.12.0
