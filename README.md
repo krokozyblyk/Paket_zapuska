@@ -83,6 +83,6 @@ npm start
 
 ## Тестовые учетные записи
 
-- **Администратор**: admin@prizma.ru / admin123
-- **Товаровед**: merchandiser@prizma.ru / merch123
-- **Клиент**: client@prizma.ru / client123
+- **Администратор**: admin@prizma.ru / Password1
+- **Товаровед**: merch@prizma.ru / Password1
+- **Клиент**: client@prizma.ru / Password1
